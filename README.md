@@ -92,6 +92,14 @@ $app = new A1comms\GaeSupportLaravel\Foundation\Application(
 );
 ```
 
+*NOTE:* If you are using Laravel 5.6 or above then logging can be setup via a custom logging channel in `config/logging.php`:
+```
+    'gae' => [
+        'driver' => 'custom',
+        'via' => A1comms\GaeSupportLaravel\Log\CreateLoggingDriver::class,
+    ],
+```
+
 **5.** Update `app/Exceptions/Handler.php` to enable proper Exception logging to StackDriver Error Reporting & Logging:
 
 Change the following `use` statement:
